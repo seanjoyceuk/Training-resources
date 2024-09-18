@@ -1,0 +1,56 @@
+    1  pwd
+    2  cd D:
+    3  pwd
+    4  mkdir command line course
+    5  pwd
+    6  ls
+    7  cd command/
+    8  cd D:
+    9  ls
+   10  cd command_line_course
+   11  touch test.doc
+   12  touch command.txt intro.r intro.py
+   13  ls
+   14  pwd
+   15  mkdir r python
+   16  ls
+   17  mv intro.r r
+   18  ls
+   19  mv intro.py python
+   20  mv test.doc python
+   21  mv command.txt r
+   22  ls
+   23  cd python
+   24  pwd
+   25  ls
+   26  cd r
+   27  cd d
+   28  cd D:
+   29  ls
+   30  cd command_line_course/python
+   31  pwd
+   32  ls
+   33  cd D:\command_line_course\r
+   34  cd D:
+   35  cd python
+   36  cd command_line_course/r
+   37  pwd
+   38  
+   39  mv data.py data.txt
+   40  pwd
+   41  cd ..
+   42  pwd
+   43  cd ../..
+   44  pwd
+   45  pwd
+   46  cd D:
+   47  pwd
+   48  cd command_line_course/python
+   49  cd command_line_course/r
+   50  cd D:/command_line_course/r
+   51  ls
+   52  cat command.txt
+   53  mv --help
+   54  touch --help
+   55  ls -la
+   56  history >> history.txt

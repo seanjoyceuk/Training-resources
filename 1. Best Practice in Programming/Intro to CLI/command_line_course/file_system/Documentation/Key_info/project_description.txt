@@ -1,0 +1,1 @@
+Create a course to help people learn how to do things with command line.

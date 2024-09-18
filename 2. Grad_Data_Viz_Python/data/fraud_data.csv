@@ -1,0 +1,11 @@
+fraud,year,cases
+Total fraud,year_ending_march_2019,3809
+Total fraud,year_ending_march_2020,3675
+Bank and credit account fraud,year_ending_march_2019,2579
+Bank and credit account fraud,year_ending_march_2020,2474
+Consumer and retail fraud,year_ending_march_2019,1019
+Consumer and retail fraud,year_ending_march_2020,914
+Advance fee fraud,year_ending_march_2019,57
+Advance fee fraud,year_ending_march_2020,60
+Other fraud,year_ending_march_2019,154
+Other fraud,year_ending_march_2020,227

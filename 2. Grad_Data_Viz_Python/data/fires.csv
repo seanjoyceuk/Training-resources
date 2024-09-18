@@ -1,0 +1,64 @@
+year,incident_type,count
+1999/00,Fires,386027
+1999/00,Fire-false alarms,388218
+1999/00,Non-fire incidents,155328
+2000/01,Fires,359259
+2000/01,Fire-false alarms,379001
+2000/01,Non-fire incidents,174481
+2001/02,Fires,431838
+2001/02,Fire-false alarms,393852
+2001/02,Non-fire incidents,165103
+2002/03,Fires,412491
+2002/03,Fire-false alarms,375353
+2002/03,Non-fire incidents,170298
+2003/04,Fires,473563
+2003/04,Fire-false alarms,384082
+2003/04,Non-fire incidents,158383
+2004/05,Fires,341968
+2004/05,Fire-false alarms,360997
+2004/05,Non-fire incidents,158419
+2005/06,Fires,336107
+2005/06,Fire-false alarms,350606
+2005/06,Non-fire incidents,157021
+2006/07,Fires,336233
+2006/07,Fire-false alarms,352136
+2006/07,Non-fire incidents,166002
+2007/08,Fires,293920
+2007/08,Fire-false alarms,331478
+2007/08,Non-fire incidents,166348
+2008/09,Fires,249237
+2008/09,Fire-false alarms,312914
+2008/09,Non-fire incidents,155654
+2009/10,Fires,241462
+2009/10,Fire-false alarms,285368
+2009/10,Non-fire incidents,153804
+2010/11,Fires,228411
+2010/11,Fire-false alarms,272180
+2010/11,Non-fire incidents,146770
+2011/12,Fires,223937
+2011/12,Fire-false alarms,249484
+2011/12,Non-fire incidents,133520
+2012/13,Fires,154461
+2012/13,Fire-false alarms,231770
+2012/13,Non-fire incidents,135055
+2013/14,Fires,171350
+2013/14,Fire-false alarms,224119
+2013/14,Non-fire incidents,131346
+2014/15,Fires,155040
+2014/15,Fire-false alarms,215857
+2014/15,Non-fire incidents,125239
+2015/16,Fires,162266
+2015/16,Fire-false alarms,214398
+2015/16,Non-fire incidents,152843
+2016/17,Fires,162006
+2016/17,Fire-false alarms,223935
+2016/17,Non-fire incidents,174572
+2017/18,Fires,167339
+2017/18,Fire-false alarms,226044
+2017/18,Non-fire incidents,172612
+2018/19,Fires,182873
+2018/19,Fire-false alarms,231156
+2018/19,Non-fire incidents,162181
+2019/20,Fires,154080
+2019/20,Fire-false alarms,231500
+2019/20,Non-fire incidents,171959

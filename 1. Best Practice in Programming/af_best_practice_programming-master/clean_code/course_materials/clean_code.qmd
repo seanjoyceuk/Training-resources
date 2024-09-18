@@ -1,0 +1,772 @@
+---
+title: "Best Practice in Programming - Clean Coding"
+author: "Data Science Campus Faculty"
+format:
+  html:
+    highlight-style: tango
+    theme: united
+    toc: true
+    toc-title: Contents
+    toc-location: right
+    toc-depth: 3
+    number-sections: true 
+    link-external-newwindow: true
+---
+
+
+![](AF_DSC_banner.png){fig-alt="Government Analysis Function and Data Science Campus Logos."}
+
+
+<hr style="width:100%;height:4px;border-width:0;color:gray;background-color:#dd4814; opacity:1"> 
+
+<!--- Date course last updated and a contact for any help needed. --->
+<center> Course Release: May 2021 | Course Updated: November 2022 | <a href="mailto:Data.Science.Campus.Faculty@ons.gov.uk?subject=Help with course">Need help? Contact the team.</a></center>
+
+## Learning Outcomes {-}
+
+After completing this course you should:
+
+- understand what clean code is
+
+- understand the importance of writing clean code
+
+- be familiar with some principles of clean code 
+
+<hr style="width:75%;height:4px;border-width:0;color:gray;background-color:#dd4814; opacity:0.75"> 
+
+<!-- Usually Introduction to ... (also mention specific things, loading data, data wrangling etc) ensure if any analytical skills are needed they're included too -->
+
+## Prerequisite Knowledge{-}
+
+Basic programming knowledge in Python or R is required.
+
+<hr style="width:75%;height:4px;border-width:0;color:gray;background-color:#dd4814; opacity:0.75"> 
+
+
+## Course Format{-}
+
+This course is written in both the Python and the R programming language.
+Where code is provided it will be presented in tabs; one for Python and one for R. Please choose the tab with the language you wish to use.
+An example is below.
+
+## Code Examples
+
+::: {.panel-tabset}
+## **Python**{-}
+```{python}
+print("This tab contains Python code")
+```
+
+## **R**{-}
+```{r}
+print("This tab contains R code")
+```
+:::
+
+
+
+<hr style="width:75%;height:4px;border-width:0;color:gray;background-color:#dd4814; opacity:0.75"> 
+
+## Duration {.unnumbered}
+
+1 hour
+
+<hr style="width:100%;height:4px;border-width:0;color:gray;background-color:#dd4814; opacity:1"> 
+
+# Introduction 
+
+We don’t write code once and forget about it. It is written and then modified over time to keep it up to date and efficient as it pertains to the project.  Maintaining a long-living software system is substantially related to the quality of the code. Every year, a large amount of time and significant resources are lost due to poorly written code.  Writing clean code is a key skill every developer should have.
+
+***“Always code as if the guy who ends up maintaining your code is a violent psychopath who knows where you live.”*** - John F. Woods, Game Programmer (1991)
+
+In this course, we will understand what clean code is and how to make our code clean code.
+
+
+# What is Clean Code? 
+
+Clean code is a set of principles for writing code that seeks to be:
+
+- Readable
+- Understandable
+- Maintainable
+- Extendable
+
+# Why Should We Write Clean Code? 
+
+As a developer, we need to create a product using code. Most of the time this product will be used or modified by you or others. 
+
+By using clean code and making the code readable, it will save you and others time in the future and will enable you to add new features, test/fix bugs and collaborate with other developers. 
+
+
+<br>
+
+   ***“Code is like humor. When you have to explain it, it’s bad”***
+
+<br>
+
+<center> 
+![](clean_code.png)
+</center
+
+<br>
+<br>
+
+# How to Write Clean Code? 
+
+Writing clean code is about taking certain guiding principles into consideration when writing code.
+<br>
+
+
+##	Use Descriptive Names 
+
+The names of variables, functions and classes need to be intentionally revealing, pronounceable and need to reflect what a function does and what the variables are. If a name requires a comment, then the name does not reveal its intent. In addition it is recommended that we keep naming conventions standard in our code. You can find information on [PEP 8 for Python](https://www.python.org/dev/peps/pep-0008/#naming-conventions) or [R style guide](http://adv-r.had.co.nz/Style.html#:~:text=Variable%20and%20function%20names%20should,this%20is%20not%20easy!)
+
+<br>
+
+As a general rule keep the names of the **variables** and **classes** as **nouns** and the **names** of the **functions** as **verbs.**  
+<br>
+
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+n = 10 # no of patients 
+
+no_pat = 10  # no of patients 
+```
+
+### **R**{-}
+
+```{r}
+n <- 10  # no of patients 
+
+no_pat <- 10    # no of patients 
+
+```
+:::
+
+
+
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+Variable Name
+```{python}
+number_of_patients = 10
+```
+
+
+Function Name
+
+```
+get_number_of_patients()
+
+```
+Class Name
+
+```
+PatientService
+
+```
+
+
+### **R**{-}
+
+Variable Name 
+
+```
+number_of_patients <- 10
+```
+
+
+**Note:** `number.of.patients` is widely used and even considered best practice among R users. However, as Data Scientists we are expected to be able to move around different languages and that would be restrictive in any other language. Therefore, if this will be an obstacle for you to move around different languages, then we do not recommend it.
+
+Function Name
+
+```
+get_number_of_patients()
+
+```
+
+Class Name
+```
+PatientService
+
+```
+:::
+
+
+
+
+##	Avoid Disinformation 
+
+We must avoid leaving false clues that obscure the meaning of the code. Do not refer to something like a list if it is not a list.  The word has a specific meaning and it may lead to false information. 
+
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+gender = (1, 2, 1, 1, 2, 2, 2)
+
+student_table =["Joe", "Charlie", "Rita", "Alison", "Dave"]
+```
+
+### **R**{-}
+```{r}
+gender <- c(1, 2, 1, 1, 2, 2, 2)
+
+student_table <- c("Joe", "Charlie", "Rita", "Alison", "Dave")
+```
+:::
+
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+gender = ("male", "female", "male", "male", "female", "female", "female")
+
+student_list =["Joe", "Charlie", "Rita", "Alison", "Dave"]
+```
+
+### **R**{-}
+
+```{r}
+gender <- c("male", "female", "male", "male", "female", "female", "female")
+
+student_list <- c ("Joe", "Charlie", "Rita", "Alison", "Dave")
+```
+:::
+
+
+## Make Meaningful Distinctions
+
+When writing code, we should not write solely to satisfy the compiler or interpreter. Therefore, it is not best practice to add number series in variable, class or method names. We need to distinguish names in such a way that the reader knows what the differences are.
+
+
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+import pandas as pd
+
+cancer1 = {'patient_id': [1, 2, 3, 4], 'cancer': [1, 1, 2, 3]}
+cancer2 = pd.DataFrame(cancer1)
+
+cancer2
+```
+
+
+### **R**{-}
+```{r}
+cancer<- c(1, 1, 2, 3) 
+patientId<- c(1, 2, 3, 4)
+
+cancer2<-cbind(patientId, cancer)
+cancer2
+```
+:::
+
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+import pandas 
+
+patient_cancer_list = [
+  {'patient_id': 1, 'cancer_stage': 1},
+  {'patient_id': 2, 'cancer_stage': 1},
+  {'patient_id': 3, 'cancer_stage': 2},
+  {'patient_id': 4, 'cancer_stage': 4}]
+  
+patient_cancer_dataframe = pandas.DataFrame(patient_cancer_list)
+
+patient_cancer_dataframe
+
+```
+
+
+### **R**{-}
+```{r}
+library(plyr)
+
+patientCancerList <- list(
+  list('patientId' = 1, 'cancerStage' = 1),
+  list('patientId' = 2, 'cancerStage' = 1),
+  list('patientId' = 3, 'cancerStage' = 2),
+  list('patientId' = 4, 'cancerStage' = 4))
+
+patientCancerDataframe <- ldply(patientCancerList, data.frame)
+patientCancerDataframe
+```
+:::
+
+
+##  Comments
+
+We write comments with the intention of explaining what code does.  The issue with comments is they are not always kept up to date. The code is frequently updated or moved from one place to another, but  the old comments remain unchanged. As a result, the comments no longer reflect the code. In addition, code should tell what each code is doing not comments. Instead of writing comments to explain code we need to focus on making the code readable.  
+
+
+**“A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment.”** - Robert C Martin, Clean Code: A Handbook of Agile Software Craftsmanship
+
+
+
+
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+#this function returns the sum of all even vector elements 
+def ad_ev_num(x):
+  ev_nu = sum([i for i in x if i % 2 == 0]) #sums every element, if the element is even 
+  return(ev_nu)
+  
+```
+
+### **R**{-}
+```{r}
+#this function returns the sum of all even vector elements 
+f <- function(x){
+  s <- sum(x[x %% 2 ==0])#find the even numbers and gets their sum
+  return(s)
+}
+```
+:::
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def get_sum_of_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if each_number % 2 == 0]
+  sum_of_even_numbers = sum(even_numbers) 
+  return(sum_of_even_numbers)
+```
+
+### **R**{-}
+```{r}
+getSumOfEvenNumbers <- function(numbers){
+  evenNumbers <- numbers[numbers %% 2 ==0]
+  sumOfEvenNumbers <- sum(evenNumbers)
+  return(sumOfEvenNumbers)
+}
+```
+:::
+
+##	Don’t Repeat Yourself
+
+Don't repeat yourself, aka DRY, promotes that the code we create should be unique, avoiding  or reducing duplicated code. Having same code in different places makes maintainability harder, if we make any changes to the code it needs to be updated in different  places instead of just one. Duplicated code also adds complexity and makes the code excessively large.  A general golden rule is that when we find ourselves creating duplicated code, that's a good usage for a function. 
+
+
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+person1 = [80,1.65]
+person2 = [44, 1.45]
+
+bmi_person1 = int(person1[0]/ person1[1]**2)
+print ("bmi of person1 is ", bmi_person1)
+
+bmi_person2 = int(person2[0]/ person2[1]**2)
+print ("bmi of person1 is ", bmi_person2)
+  
+```
+
+### **R**{-}
+```{r}
+person1 <-  c(80,1.65)
+person2 <- c(44, 1.45)
+
+bmi_person1 <- (person1[1]/ person1[2]**2)
+cat ("bmi of person1 is ", bmi_person1)
+
+bmi_person2 <- (person2[1]/ person2[2]**2)
+cat ("bmi of person1 is ", bmi_person2)
+```
+:::
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def calculate_bmi(name, weight_kg, height_m):
+    bmi = int(weight_kg/height_m **2)
+    return ("bmi of",name ,"is", bmi)
+    
+```
+
+### **R**{-}
+```{r}
+calculate_bmi <- function(name, weight_kg, height_m){
+   bmi <-(weight_kg/height_m **2)
+    cat ("bmi of",name ,"is", bmi)
+}
+```
+:::
+
+
+## Let One Function Perform Only One Task 
+
+Each function should just do one task.  That task should be done well, and in a robust way. If a function does more than one task, it should be split into multiple functions, where each function does one sub-task. A function should not do other things in the background, just the single task it's written for.
+
+**“The first rule of functions is that they should be small. The second rule of functions is that they should be smaller than that.”** -  Robert C Martin, Clean Code: A Handbook of Agile Software Craftsmanship
+
+Akin to Single Responsibility. The idea is to keep the code together that can get damaged for the same reason of change (‘Keep together what can be damaged together’). When changing something, you want to impact as few things as possible. However, thousands of tiny functions will be painful to read.
+
+Never keep code that’s not used - its confusing and usually falls behind in maintenance so it can’t be used (the same goes for carrying code without using it).
+
+
+### Bad Practice
+
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def get_sum_of_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if each_number % 2 == 0]
+  even_number_count = len(even_numbers)
+  sum_of_even_numbers = sum(even_numbers) 
+  return(sum_of_even_numbers)
+  
+```
+
+### **R**{-}
+```{r}
+getSumOfEvenNumbers <- function(numbers){
+  evenNumbers <- numbers[numbers %% 2 ==0]
+  evenNumbersCount <- length(evenNumbers)
+  sumOfEvenNumbers <- sum(evenNumbers)
+  return(sumOfEvenNumbers)
+}
+```
+:::
+
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def get_sum_of_even_numbers(numbers):
+  even_numbers = get_even_numbers(numbers)
+  sum_of_even_numbers = sum(even_numbers)
+  return sum_of_even_numbers
+  
+  
+def get_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if is_even(each_number)]
+  return even_numbers
+
+```
+
+### **R**{-}
+```{r}
+getSumOfEvenNumbers<-function(numbers){
+  evenNumbers <- getEvenNumbers(numbers)
+  sumOfEvenNumbers <- sum(evenNumbers)
+  return(sumOfEvenNumbers)
+}
+
+getEvenNumbers<-function(numbers){
+  evenNumbers <- numbers[areEven(numbers)]
+  return(evenNumbers)
+}
+
+```
+:::
+
+
+##	Keep It Simple 
+
+Nobody likes debugging, maintaining, or making changes to complex code. According to the keep it simple principle, we need to keep our code as simple as possible.  Simple code is easier to maintain and understand. If your function has too many arguments, perhaps the function is doing too much and you need to split it. 
+
+Remember, the simpler the code, the simpler it is to understand.
+ 
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+
+def count_even_numbers(first_number, second_number, third_number, fourth_number, fifth_number):
+  given_numbers = (first_number, second_number, third_number, fourth_number, fifth_number)
+  even_numbers = get_even_numbers(given_numbers)
+  even_numbers_count = len(even_numbers)
+  return even_numbers_count
+  
+  
+def get_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if is_even(each_number)]
+  return even_numbers
+  
+```
+
+
+### **R**{-}
+```{r}
+countEvenNumbers <- function(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber){
+  givenNumbers <- c(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber)
+  evenNumbers <- getEvenNumbers(givenNumbers)
+  evenNumbersCount <- length(evenNumbers)
+  return (evenNumbersCount)
+}
+
+
+getEvenNumbers<-function(numbers){
+  evenNumbers <- numbers[areEven(numbers)]
+  return(evenNumbers)
+}
+
+```
+:::
+
+### Best Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def count_even_numbers(numbers):
+  even_numbers = get_even_numbers(numbers)
+  even_numbers_count = len(even_numbers)
+  return even_numbers_count
+  
+def get_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if is_even(each_number)]
+  return even_numbers
+
+```
+
+### **R**{-}
+```{r}
+countEvenNumbers <- function(numbers){
+  evenNumbers <- getEvenNumbers(numbers)
+  evenNumbersCount <- length(evenNumbers)
+  return (evenNumbersCount)
+}
+
+getEvenNumbers<-function(numbers){
+  evenNumbers <- numbers[areEven(numbers)]
+  return(evenNumbers)
+}
+```
+:::
+
+## 	No To Nesting
+ 
+Nested loops are difficult to read, understand and makes code complex.  Too many if-else statements can make our code hard to understand.  We should keep conditional statements as flat and easy to understand as possible. It is good practice to create separate functions instead of nested loops. 
+ 
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+first_element = (-1)
+second_element = (-2)
+third_element = (-3)
+
+if (first_element < 0):
+  if (second_element < 0):
+    if (third_element < 0): 
+      print('all negatives')
+  
+```
+ 
+  or
+  
+```{python}
+if (first_element < 0 and second_element < 0 and third_element < 0): 
+  print('all negatives')
+```
+
+
+### **R**{-}
+```{r}
+firstElement <- (-1)
+secondElement <- (-2)
+thirdElement <- (-3)
+
+if (firstElement < 0){
+    if (secondElement < 0){
+      if (thirdElement < 0){
+        print('all negatives')}}}     
+
+```
+
+   or 
+    
+```{r}
+if (firstElement < 0 & secondElement < 0 & thirdElement < 0){
+  print('all negatives')
+}
+```
+:::
+
+### Best Practice
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def all_elements_negative(elements):
+  positive_elements = get_positive_elements(elements)
+  number_of_positive_elements = len(positive_elements)
+  return number_of_positive_elements == 0 
+  
+  
+def get_positive_elements(elements):
+  positive_elements = [each_element for each_element in elements if each_element > 0]
+  return positive_elements
+  
+  
+all_elements = [first_element, second_element, third_element]
+if (all_elements_negative(all_elements)):
+  print('all_negatives')
+
+```
+### **R**{-}
+```{r}
+allElementsNegative <- function(elements){
+  positiveElements <- getPositiveElements(elements)
+  numberOfPositiveElements <- length(positiveElements)
+  return (numberOfPositiveElements == 0)
+}
+
+
+getPositiveElements<-function(numbers){
+  positiveElements <- numbers[numbers > 0]
+  return(positiveElements)
+}
+
+allElements <- c(firstElement, secondElement, thirdElement)
+if (allElementsNegative(allElements)){
+  print('all negatives')
+}
+
+```
+:::
+ 
+## Code Should Read Like a Book
+
+Our code should be structured and organised in a such way that anyone who looks at our code would be able to grasp its purpose within seconds of interaction, just as a book is structured through chapter and paragraphs. We should not make anyone looking at our code embody Sherlock Holmes in order to deduce the purpose of the written code.  Code should be written in order it is called. 
+
+ 
+### Bad Practice
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def get_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if is_even(each_number)]
+  return even_numbers
+  
+  
+def get_sum_of_even_numbers(numbers):
+  even_numbers = get_even_numbers(numbers)
+  sum_of_even_numbers = sum(even_numbers)
+  return sum_of_even_numbers
+
+def is_even(number):
+  return number % 2 == 0
+
+```
+ 
+
+### **R**{-}
+
+```{r}
+getEvenNumbers<-function(numbers){
+  evenNumbers <- numbers[areEven(numbers)]
+  return(evenNumbers)
+}
+
+getSumOfEvenNumbers <- function(numbers){
+  evenNumbers <- getEvenNumbers(numbers)
+  sumOfEvenNumbers <- sum(evenNumbers)
+  return(sumOfEvenNumbers)
+}
+
+
+areEven <- function(numbers){
+  return(numbers %% 2 == 0)
+}
+
+```
+:::
+
+
+### Best Practice 
+
+::: {.panel-tabset}
+### **Python**{-}
+```{python}
+def get_sum_of_even_numbers(numbers):
+  even_numbers = get_even_numbers(numbers)
+  sum_of_even_numbers = sum(even_numbers)
+  return sum_of_even_numbers
+  
+def get_even_numbers(numbers):
+  even_numbers = [each_number for each_number in numbers if is_even(each_number)]
+  return even_numbers
+  
+  
+def is_even(number):
+  return number % 2 == 0
+
+```
+
+### **R**{-}
+```{r}
+getSumOfEvenNumbers<-function(numbers){
+  evenNumbers <- getEvenNumbers(numbers)
+  sumOfEvenNumbers <- sum(evenNumbers)
+  return(sumOfEvenNumbers)
+}
+
+getEvenNumbers<-function(numbers){
+  evenNumbers <- numbers[areEven(numbers)]
+  return(evenNumbers)
+}
+
+areEven <- function(numbers){
+  return(numbers %% 2 == 0)
+}
+
+```
+:::
+
+
+# Conclusion 
+
+When writing code we should  keep it as simple as we can to reduce the complexity.  Writing clean cannot be acquired overnight. It is a habit that needs to be developed by applying guiding principles whenever we write code.
+
+**"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"** - Martin Fowler, 1999.  Refactoring: Improving the Design of Existing Code. 
+
+**More Resources**
+
+For more information on clean coding, refer to the [Quality Assurance of Code for Analysis and Research](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) e-book.
+
+
+# References
+
+
+Clean Code: A Handbook of Agile Software Craftsmanship, Robert C. Martin, Prentice Hall, 2009 https://www.investigatii.md/uploads/resurse/Clean_Code.pdf
+
+
+PEP 8 – Style Guide for Python Code, https://www.python.org/dev/peps/pep-0008/
+
+
+Google’s R Style Guide, https://google.github.io/styleguide/Rguide.xml
+
+
+The State of Naming Conventions in R, 2012, https://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf
